@@ -1,0 +1,599 @@
+[class*="flexUnit"] {
+  align-items: stretch;
+  display: flex;
+  display: -ms-flexbox;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  position: relative;
+}
+[class*="flexUnit-col"] {
+  flex-wrap: wrap;
+}
+[class*="flexUnit"] > * {
+  min-width: 0;
+}
+[class*="flexUnit-col2"] > * {
+  width: calc(96% / 2);
+}
+[class*="flexUnit-col2"] > *:not(:last-child) {
+  margin-bottom: 1rem;
+}
+[class*="flexUnit-col3"] > * {
+  width: calc(96% / 3);
+}
+[class*="flexUnit-col3"] > *:nth-child(n + 4) {
+  margin-top: 1rem;
+}
+[class*="flexUnit-col3"]:after {
+  content: "";
+  display: block;
+  height: 0;
+  width: calc(96% / 3);
+}
+[class*="flexUnit-col2"] > .fbox-1 {
+  width: 32%;
+}
+[class*="flexUnit-col2"] > .fbox-2 {
+  width: 64%;
+}
+[class*="flexUnit-1"] {
+  flex: 1;
+}
+[class*="-flexdrr"] {
+  flex-direction: row-reverse;
+}
+
+@media screen and (max-width: 769px) {
+  [class*="flexUnit"] {
+    display: block;
+  }
+  [class*="flexUnit-col2"] > *,
+  [class*="flexUnit-col3"] > *,
+  [class*="flexUnit-col2"] > .fbox-1,
+  [class*="flexUnit-col2"] > .fbox-2 {
+    width: 100%;
+  }
+}
+
+#seCont > section {
+  margin-bottom: 8rem;
+}
+#seCont > section p {
+  margin-bottom: 1em;
+}
+#seCont > section:last-child {
+  background-image: url("../images/stripeline.jpg");
+  background-repeat: repeat-x;
+  padding-top: calc(16px + 4rem);
+}
+.seheader .cover {
+  border-radius: 8px;
+  height: 214px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+.seheader .cover img {
+  height: 214px;
+  object-fit: cover;
+  font-family: "object-fit: cover;";
+  width: 100%;
+}
+.seheader [class*="seheadline"] {
+  background-color: #fff;
+  border-radius: 4px;
+  display: block;
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.25em;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+  margin-top: -3rem;
+  position: relative;
+  text-align: center;
+  width: calc(100% - 2rem);
+}
+.seheader [class*="seheadline"] span {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+.seheader [class*="seheadline"]:before {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  height: 32px;
+  width: 144px;
+}
+.seheader .seheadline-01:before {
+  content: url("https://www.andbeans.jp/andbeans/wp-content/uploads/2020/06/se01_title.svg");
+}
+.seheader .seheadline-02:before {
+  content: url("https://www.andbeans.jp/andbeans/wp-content/uploads/2020/06/se02_title.svg");
+}
+.seheader .seheadline-03:before {
+  content: url("https://www.andbeans.jp/andbeans/wp-content/uploads/2020/06/se03_title.svg");
+}
+.seheader [class*="seheadline"]:after {
+  content: url("https://www.andbeans.jp/andbeans/wp-content/uploads/2020/06/se_headlineparts.svg");
+  display: block;
+  height: auto;
+  margin: 0 auto;
+  position: relative;
+  top: -7px;
+  width: 144px;
+}
+.seheadpoint {
+  counter-reset: senum;
+  justify-content: center;
+}
+.seheadpoint li {
+  background-color: #fbe7e8;
+  border-radius: 4px;
+  color: #ed858d;
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.25em;
+  margin-bottom: 2rem;
+  padding: 0.5rem 1rem;
+  padding-left: 4rem;
+  position: relative;
+}
+.seheadpoint li:before {
+  counter-increment: senum;
+  content: counter(senum, decimal-leading-zero);
+  font-size: 2rem;
+  font-weight: 400;
+  left: 1rem;
+  margin-top: -0.5rem;
+  position: absolute;
+  top: 50%;
+}
+.seheadpoint li:nth-child(even) {
+  margin-left: 4%;
+}
+.seheadpoint li span {
+  color: #000;
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+@media screen and (max-width: 769px) {
+  .seheadpoint li:nth-child(even) {
+    margin-left: 0;
+  }
+}
+
+[class*="slashbalTtl"] {
+  display: block;
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  text-align: center;
+  width: 100%;
+}
+[class*="slashbalTtl"]:after {
+  color: #ed858c;
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 400;
+  margin-top: 0.25rem;
+}
+.slashbalTtl-01:after {
+  content: "―〈　&BEANS × Constipation　〉―";
+}
+.slashbalTtl-02:after {
+  content: "―〈　&BEANS × Skin problems　〉―";
+}
+.slashbalTtl-03:after {
+  content: "―〈　&BEANS × Period & PMS　〉―";
+}
+.leftlineTtl {
+  border-left: 4px solid #ed858c;
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.25em;
+  margin-bottom: 1rem;
+  padding: 0.4rem 0.8rem 0.4rem 0.8rem;
+}
+[class*="slashbalTtl"] span,
+.leftlineTtl span {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+[class*="slashbalTtl"] span:before {
+  content: url("https://www.andbeans.jp/andbeans/wp-content/uploads/2020/06/se_slashbal-l.svg");
+  margin-right: 1em;
+}
+[class*="slashbalTtl"] span:after {
+  content: url("https://www.andbeans.jp/andbeans/wp-content/uploads/2020/06/se_slashbal-r.svg");
+  margin-left: 1em;
+}
+
+.sePostList {
+  align-items: stretch;
+  display: flex;
+  display: -ms-flexbox;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: relative;
+}
+.sePostList:before {
+  content: "";
+  display: block;
+  order: 1;
+  width: calc(94% / 4);
+}
+.sePostList:after {
+  content: "";
+  display: block;
+  width: calc(94% / 4);
+}
+.sePostList li {
+  margin-bottom: 1em;
+  width: calc(94% / 4);
+}
+.sePostList dt {
+  position: relative;
+  width: 100%;
+}
+.sePostList dt:before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+.sePostList dt img {
+  border-radius: 8px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  object-fit: cover;
+  font-family: "object-fit: cover;";
+}
+.sePostList dd {
+  font-size: 0.8em;
+  line-height: 1.25em;
+  padding: 0.5em;
+}
+.sePostList a {
+  display: block;
+}
+
+@media screen and (max-width: 769px) {
+  .sePostList li {
+    width: calc(96% / 2);
+  }
+}
+
+.causeUnit {
+  margin: 0 auto;
+  max-width: 480px;
+}
+.causeUnit dl {
+  width: calc(96% / 2);
+}
+.causeUnit dl dt {
+  border-bottom: 1px dotted #ed858c;
+  margin-bottom: 1em;
+  padding-bottom: 0.25em;
+  text-align: center;
+  position: relative;
+}
+.causeUnit dl dt:before {
+  content: "（";
+  color: #ed858c;
+  margin-right: 1em;
+}
+.causeUnit dl dt:after {
+  content: "）";
+  color: #ed858c;
+  margin-left: 1em;
+}
+
+@media screen and (max-width: 769px) {
+  .causeUnit dl {
+    width: 100%;
+  }
+}
+
+.checkList {
+  margin-bottom: 1rem;
+}
+.checkList li {
+  line-height: 1.5rem;
+  padding-left: 2rem;
+  position: relative;
+  width: 100%;
+}
+.checkList li:not(:first-child) {
+  margin-top: 0.5rem;
+}
+.checkList li:before {
+  color: #ed858c;
+  content: "\f14a";
+  display: inline-block;
+  font-family: "Font Awesome 5 Pro";
+  font-size: 1.5rem;
+  font-weight: 400;
+  left: 0;
+  line-height: 1.5rem;
+  margin-top: calc(1.5rem / 2 * -1);
+  position: absolute;
+  top: 50%;
+}
+.exclBox {
+  border: 1px solid #ed858b;
+  border-radius: 8px;
+  font-size: 0.8em;
+  margin-left: 2em;
+  padding: 1em;
+  padding-left: 3em;
+  position: relative;
+}
+.exclBox:before {
+  background-color: #ed858b;
+  border-radius: 50%;
+  color: #ffffff;
+  content: "\f071";
+  display: block;
+  font-family: "Font Awesome 5 Pro";
+  font-size: 2em;
+  font-weight: 900;
+  height: 2em;
+  left: -1em;
+  line-height: 2em;
+  position: absolute;
+  text-align: center;
+  width: 2em;
+}
+.attnSoyRcp {
+  border: 1px dotted #ed858c;
+  border-radius: 8px;
+  display: block;
+  margin-top: 2rem;
+  padding: 2rem 1rem 1rem 1rem;
+}
+.attnSoyRcp h4 {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.attnSoyRcp .cardBox dl dt {
+  border-radius: 8px;
+  height: 214px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+.attnSoyRcp .cardBox dl img {
+  height: 214px;
+  object-fit: cover;
+  font-family: "object-fit: cover;";
+  width: 100%;
+}
+.attnSoyRcp .cardBox dl dd {
+  padding: 0 1rem;
+}
+.attnSoyRcp .cardBox dl dd > span {
+  background-color: #fff;
+  display: block;
+  font-weight: 500;
+  margin-top: -3rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  position: relative;
+  text-align: center;
+  z-index: 2;
+}
+img.graphlineBox {
+  border: 1px solid #999;
+  border-radius: 8px;
+}
+
+.bgtexture {
+  background-color: #fbe7e8;
+  background-image: url("../images/soytexture.png");
+  background-repeat: repeat;
+  border-radius: 8px;
+  padding: 0 8%;
+}
+
+.balloon {
+  background: #ed858c;
+  border-radius: 8px;
+  color: #fff;
+  display: inline-block;
+  margin-bottom: calc(8px + 0.5em);
+  padding: 0.25em 1em;
+  position: relative;
+}
+.balloon:before {
+  border: 8px solid transparent;
+  border-top: 8px solid #ed858c;
+  content: "";
+  left: 50%;
+  margin-left: -8px;
+  position: absolute;
+  top: 100%;
+}
+.bgtexture .balloon {
+  margin-top: 2em;
+}
+.decoRubi {
+  display: block;
+  font-family: "Sacramento", cursive;
+  color: #999;
+}
+
+.morepoint li:not(:first-child) {
+  margin-top: 1rem;
+}
+.morepoint dl {
+  border: 1px dotted #ed858c;
+  border-radius: 8px;
+  display: block;
+}
+.morepoint dt {
+  background-color: #fbe7e8;
+  color: #ed858c;
+  font-size: 1.125rem;
+  padding: 0 1em 0.5em 1em;
+}
+.morepoint dt > span {
+  background-color: #ed858c;
+  color: #fff;
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 0.5em;
+  padding: 0.25em 0.5em;
+  text-align: center;
+  width: 6em;
+}
+.morepoint dt > span > span {
+  font-size: 0.8em;
+}
+.morepoint dd {
+  padding: 0.5em 1em 1em 1em;
+}
+
+.beanSecret {
+  margin: 0 auto;
+  max-width: 480px;
+}
+.beanSecret h2 {
+  display: block;
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  text-align: center;
+  width: 100%;
+}
+.beanSecret h2:before {
+  content: url("https://www.andbeans.jp/andbeans/wp-content/uploads/2020/06/se_msmb-bal.svg");
+  display: block;
+  height: auto;
+  margin: 0 auto;
+  position: relative;
+  right: -4em;
+  width: 160px;
+}
+.beanSecret h2:after {
+  content: url("https://www.andbeans.jp/andbeans/wp-content/uploads/2020/06/se_headlineparts.svg");
+  display: block;
+  height: auto;
+  margin: 0 auto;
+  position: relative;
+  top: -7px;
+  width: 144px;
+}
+
+.balBox {
+  background: #fcebed;
+  border-radius: 8px;
+  font-size: 0.875em;
+  margin-top: 1em;
+  padding: 1em !important;
+  position: relative;
+}
+.balBox:before {
+  border: 8px solid transparent;
+  border-bottom: 8px solid #fcebed;
+  content: "";
+  left: calc(1rem + 12px);
+  position: absolute;
+  top: -16px;
+}
+.nutritionBox {
+  align-content: flex-start;
+  align-items: center;
+  display: flex;
+  display: -ms-flexbox;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: relative;
+}
+.nutritionBox > * {
+  width: calc(96% / 2);
+}
+[class*="ntricon"] {
+  position: relative;
+}
+[class*="ntricon"]:before {
+  content: "";
+  display: inline-block;
+  font-family: "Font Awesome 5 Pro";
+  font-weight: 900;
+  text-align: center;
+  width: 1.5em;
+}
+.ntricon-fire:before {
+  content: "\f7e4";
+}
+.ntricon-bread:before {
+  content: "\f7ec";
+}
+.ntricon-tint:before {
+  content: "\f043";
+}
+.ntricon-meat:before {
+  content: "\f6d7";
+}
+.ntricon-candy:before {
+  content: "\f786";
+}
+.ntricon-leaf:before {
+  content: "\f06c";
+}
+.ntricon-heart:before {
+  content: "\f004";
+}
+
+/* page-promotion
+============================================================================================== */
+body[class*="promotion"] #underUnit {
+  padding-top: 0;
+}
+body[class*="promotion"] .ttl--h1 {
+  padding: 0 1rem;
+}
+
+/* 黒糖大豆たんぱく
+============================================================================================== */
+.bikatsu-protein li {
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-top: 2em;
+  padding-right: 40%;
+}
+.bikatsu-protein li:nth-child(1) {
+  background-image: url("https://www.andbeans.jp/andbeans/wp-content/uploads/2021/02/point01img.png");
+}
+.bikatsu-protein li:nth-child(2) {
+  background-image: url("https://www.andbeans.jp/andbeans/wp-content/uploads/2021/02/point02img.png");
+  background-position: left center;
+  padding-left: 40%;
+  padding-right: 0;
+}
+.bikatsu-protein li:nth-child(3) {
+  background-image: url("https://www.andbeans.jp/andbeans/wp-content/uploads/2021/02/point03img.png");
+  margin-bottom: 4em;
+}
+.bikatsu-yesnolink {
+  align-items: stretch;
+  display: flex;
+  display: -ms-flexbox;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  position: relative;
+}
+.bikatsu-yesnolink > * {
+  min-width: 0;
+}

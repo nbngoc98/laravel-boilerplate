@@ -1,0 +1,41 @@
+.header--campaign-notice {
+    background-color: #08bf5b;
+    text-align: center;
+    width: 100%;
+}
+
+.campaign-notice--pc {
+    display: inline-block;
+    height: 80px;
+}
+
+.campaign-notice--sp {
+    display: none;
+}
+
+@media screen and (max-width: 769px) {
+    .campaign-notice--pc {
+        display: none;
+    }
+
+    .campaign-notice--sp {
+        display: inline-block;
+        height: 80px;
+    }
+}
+
+.content--campaign-notice {
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+
+.content--campaign-notice a {
+    display: block;
+}
+
+.campaign-notice--square {
+    margin: 0 auto;
+    max-width: 360px;
+    width: 100%;
+}
