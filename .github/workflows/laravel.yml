@@ -7,32 +7,18 @@ env:
   PATH_DEPLOY: /var/www/html/laravel-boilerplate
   USER_NAME: ${{ secrets.EC2_USERNAME }}
   HOST: ${{ secrets.EC2_HOST }}
-# jobs:
-#   deployed-source:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Add SSH host key
-#         run: |
-#           mkdir -p ~/.ssh
-#           ssh-keyscan $HOST >> ~/.ssh/known_hosts
-#       - name: Deploy to EC2
-#         env:
-#           SSH_PRIVATE_KEY: ${{ secrets.KEY }}
-#         run: |
-#           echo  "$SSH_PRIVATE_KEY" > private_key.pem
-#           chmod 400 private_key.pem
-#           ssh -i "private_key.pem" $USER_NAME@$HOST "cd $PATH_DEPLOY && git pull && php artisan optimize:clear &&  exit"
 jobs:
-  deploy:
+  deployed-source:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Deploy EC2
-      uses: LuisEnMarroquin/setup-ssh-action@v2.0.0
-      with:
-        USER: ${{ secrets.EC2_USERNAME }}
-        ORIGIN: ${{ secrets.EC2_HOST }}
-        SSHKEY: ${{ secrets.KEY }}
-        NAME: production
-        PORT: 22
-      run: 'cd $PATH_DEPLOY && ./deploy.sh'
+      - name: Add SSH host key
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan $HOST >> ~/.ssh/known_hosts
+      - name: Deploy to EC2
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.KEY }}
+        run: |
+          echo  "$SSH_PRIVATE_KEY" > private_key.pem
+          chmod 400 private_key.pem
+          ssh -i "private_key.pem" $USER_NAME@$HOST "cd $PATH_DEPLOY && git pull && php artisan optimize:clear &&  exit"
