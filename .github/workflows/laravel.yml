@@ -30,7 +30,9 @@ jobs:
     - name: Deploy EC2
       uses: LuisEnMarroquin/setup-ssh-action@v2.0.0
       with:
-        username: ${{ secrets.EC2_USERNAME }}
-        host: ${{ secrets.EC2_HOST }}
-        key: ${{ secrets.KEY }}
+        USER: ${{ secrets.EC2_USERNAME }}
+        ORIGIN: ${{ secrets.EC2_HOST }}
+        SSHKEY: ${{ secrets.KEY }}
+        NAME: production
+        PORT: 22
         script: 'cd $PATH_DEPLOY && ./deploy.sh'
