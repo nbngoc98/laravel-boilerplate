@@ -1,0 +1,14 @@
+name: Laravel
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  laravel-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Test
+      run: Hello
