@@ -6,9 +6,22 @@ on:
   pull_request:
     branches: [ "main" ]
 
+env:
+  PATH_DEPLOY: /var/www/html/laravel-boilerplate
+  USER_NAME: ${{ secrets.EC2_USERNAME }}
+  HOST: ${{ secrets.EC2_HOST }}
 jobs:
-  laravel-deploy:
+  deployed-source:
     runs-on: ubuntu-latest
     steps:
-    - name: Test
-      run: echo Hello
+      - name: Add SSH host key
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan $HOST >> ~/.ssh/known_hosts
+      - name: Deploy to EC2
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.KEY }}
+        run: |
+          echo  "$SSH_PRIVATE_KEY" > private_key.pem
+          chmod 400 private_key.pem
+          ssh -i "private_key.pem" $USER_NAME@$HOST "cd $PATH_DEPLOY && git pull && && php artisan optimize:clear&&  exit"
