@@ -3,9 +3,6 @@ name: Laravel
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
 env:
   PATH_DEPLOY: /var/www/html/laravel-boilerplate
   USER_NAME: ${{ secrets.EC2_USERNAME }}
