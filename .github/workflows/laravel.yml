@@ -33,4 +33,4 @@ jobs:
         username: ${{ secrets.EC2_USERNAME }}
         host: ${{ secrets.EC2_HOST }}
         key: ${{ secrets.KEY }}
-        script: 'cd $PATH_DEPLOY && deploy.sh'
+        script: 'cd $PATH_DEPLOY && ./deploy.sh'
