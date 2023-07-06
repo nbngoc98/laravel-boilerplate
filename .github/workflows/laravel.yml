@@ -35,4 +35,4 @@ jobs:
         SSHKEY: ${{ secrets.KEY }}
         NAME: production
         PORT: 22
-        script: 'cd $PATH_DEPLOY && ./deploy.sh'
+      run: 'cd $PATH_DEPLOY && ./deploy.sh'
